@@ -1,0 +1,20 @@
+[project]
+name = "shazam"
+version = "0.1.0"
+description = "trying to make shazam in python"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "requests",
+    "yt-dlp",
+    "ffmpeg-python",
+    "fastapi[standard]",
+    "torch",
+    "numpy<2",
+    "torchaudio",
+    "ipykernel",
+]
+[tool.uv]
+required-environments = [
+    "sys_platform == 'darwin' and platform_machine == 'x86_64'"
+]
