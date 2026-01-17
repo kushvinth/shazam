@@ -27,7 +27,7 @@ def download_mp3(NAME: str):
 
         ytd_params = {
             "format": "bestaudio/best",
-            "outtmpl": f"./data/%(title)s.%(ext)s",
+            "outtmpl": "./data/%(title)s.%(ext)s",
         }
         with yt_dlp.YoutubeDL(ytd_params) as ydl:  # type: ignore
             for i in data["results"]:
