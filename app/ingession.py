@@ -8,6 +8,7 @@ URL = "https://itunes.apple.com/search"
 
 app = FastAPI(title="Ingession API")
 
+
 @app.get("/download")
 def download_mp3(NAME: str):
     if NAME:
@@ -28,13 +29,13 @@ def download_mp3(NAME: str):
             "format": "bestaudio/best",
             "outtmpl": f"./data/%(title)s.%(ext)s",
         }
-        with yt_dlp.YoutubeDL(ytd_params) as ydl:   # type: ignore
+        with yt_dlp.YoutubeDL(ytd_params) as ydl:  # type: ignore
             for i in data["results"]:
                 query = f"{i['artistName']} - {i['trackName']} official audio"
                 ydl.download([f"ytsearch1: {query}"])
 
         for i in os.listdir("./data"):
-            file_path = os.path.join("./data", i) 
+            file_path = os.path.join("./data", i)
             # print("-" * 30)
             # print(i)
             if not i.endswith(".mp3"):
