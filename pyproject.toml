@@ -3,7 +3,7 @@ name = "shazam"
 version = "0.1.0"
 description = "trying to make shazam in python"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.11,<3.12"
 dependencies = [
     "requests",
     "yt-dlp",
@@ -13,6 +13,11 @@ dependencies = [
     "numpy<2",
     "torchaudio",
     "ipykernel",
+    "librosa==0.11",
+    "numba==0.61.2",
+    "llvmlite==0.44.0",
+    "matplotlib>=3.10.8",
+    "opencv-python",
 ]
 [tool.uv]
 required-environments = [
