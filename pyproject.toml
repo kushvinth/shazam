@@ -18,9 +18,14 @@ dependencies = [
     "llvmlite==0.44.0",
     "matplotlib>=3.10.8",
     "opencv-python",
-    "ruff>=0.14.13",
+    "soundfile>=0.13.1",
 ]
 [tool.uv]
 required-environments = [
     "sys_platform == 'darwin' and platform_machine == 'x86_64'"
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.14.13",
 ]
