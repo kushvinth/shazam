@@ -1,5 +1,6 @@
 import sqlite3
 
+
 class FingerprintDB:
     def __init__(self, db_path="fingerprints.db"):
         self.conn = sqlite3.connect(db_path, check_same_thread=False)
