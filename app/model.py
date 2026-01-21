@@ -23,9 +23,9 @@ def generate_Spectogram(audio_path):
     return S, sr, hop_length
 
 
-spec = generate_Spectogram(
-    "/Users/MacbookPro/LocalStorage/Developer/AI/Shazam/data/Hold On, We're Going Home (feat. Majid Jordan).wav"
-)
+# spec = generate_Spectogram(
+#     "/Users/MacbookPro/LocalStorage/Developer/AI/Shazam/data/Hold On, We're Going Home (feat. Majid Jordan).wav"
+# )
 
 
 def fingerprint(spec, sr, hop):
@@ -44,7 +44,7 @@ def fingerprint(spec, sr, hop):
                     freq_bin = low + np.argmax(data)
                     freq = freq_bin * sr / (2 * len(frame))
                     fingerprint.append((time, freq))  ## Saving time and freq on the DB
-    
+
     return fingerprint
 
 
@@ -67,23 +67,23 @@ def create_hashes(peaks, target_size=5):
     return fingerprints
 
 
-audio_path = "/Users/MacbookPro/LocalStorage/Developer/AI/Shazam/data/Hold On, We're Going Home (feat. Majid Jordan).wav"
+# audio_path = "/Users/MacbookPro/LocalStorage/Developer/AI/Shazam/data/Hold On, We're Going Home (feat. Majid Jordan).wav"
 
-# 1. Spectrogram
-spec, sr, hop = generate_Spectogram(audio_path)
+# # 1. Spectrogram
+# spec, sr, hop = generate_Spectogram(audio_path)
 
-# 2. Peak extraction
-peaks = fingerprint(spec, sr, hop)
+# # 2. Peak extraction
+# peaks = fingerprint(spec, sr, hop)
 
-# print(f"\nTotal Peaks Found: {len(peaks)}")
-# print("Sample Peaks (time, freq):")
-# for p in peaks[:20]:
-#     print(p)
+# # print(f"\nTotal Peaks Found: {len(peaks)}")
+# # print("Sample Peaks (time, freq):")
+# # for p in peaks[:20]:
+# #     print(p)
 
-# 3. Hash generation
-hashes = create_hashes(peaks)
+# # 3. Hash generation
+# hashes = create_hashes(peaks)
 
-# print(f"\nTotal Hashes Generated: {len(hashes)}")
-# print("Sample Hashes (address → anchor_time_ms):")
-# for k, v in list(hashes.items())[:20]:
-#     print(f"{k} → {v}")
+# # print(f"\nTotal Hashes Generated: {len(hashes)}")
+# # print("Sample Hashes (address → anchor_time_ms):")
+# # for k, v in list(hashes.items())[:20]:
+# #     print(f"{k} → {v}")
