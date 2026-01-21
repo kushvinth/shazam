@@ -2,15 +2,11 @@ import requests
 import yt_dlp
 import ffmpeg
 import os
-from fastapi import FastAPI
 import shutil
 
 URL = "https://itunes.apple.com/search"
 
-# app = FastAPI(title="Ingession API")
 
-
-# @app.get("/download")
 def download_mp3(NAME: str):
     if NAME:
         params = {
