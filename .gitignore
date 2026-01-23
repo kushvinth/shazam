@@ -11,3 +11,12 @@ wheels/
 
 # Ruff
 .ruff_cache/
+
+# Database
+*.db
+
+# Personal Crappy Notes
+research.md
+
+# Macos
+.DS_Store
